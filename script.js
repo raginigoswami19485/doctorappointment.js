@@ -6,9 +6,7 @@
     let address=document.querySelector("#address").value
     let pass=document.querySelector("#pass").value
     let cpass=document.querySelector("#cpass").value
-    
 
-   
     if(name==""){
         alert("Please fill your name");
         document.querySelector("#name").focus();
