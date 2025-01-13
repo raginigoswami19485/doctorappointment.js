@@ -19,3 +19,5 @@ VANTA.BIRDS({
     quantity: 4.00,
     backgroundAlpha: 0.71
   })
+
+  

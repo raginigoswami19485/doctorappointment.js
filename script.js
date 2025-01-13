@@ -72,20 +72,20 @@
  
  location.href='login.html'
  return false
-
 }
-let login=()=>{
-    let names=document.querySelector("#loginname").value
-    let loginpasse=document.querySelector("#loginpass").value
 
-let localname=localStorage.getItem("name")
-let localpass=localStorage.getItem("pass")
+let login = () => {
+    let names = document.querySelector("#loginname").value;
+    let loginpasse = document.querySelector("#loginpass").value;
 
-    if(names==localname && passe==localpass){
-        location.href='homepage.html'
+    let localname = localStorage.getItem("name");
+    let localpass = localStorage.getItem("pass");
+
+    if (names == localname && loginpasse == localpass) {
+        location.href = 'homepage.html'; 
+    } else {
+        alert("Invalid Credentials"); 
     }
-    else{
-        alert("Invalid Credentials")
-    }
-    return false
+    return false; 
 }
+

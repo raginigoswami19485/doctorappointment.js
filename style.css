@@ -145,6 +145,153 @@ margin-top: 3%;
     }
 
 
+    #container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: space-around;  
+        gap: 7px;  
+        padding: 20px;  
+    }
+
+    .side {
+        width: 560px;
+        height: 200px;
+        box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.1);  
+        
+
+        display: flex;
+        flex-direction: row;  
+        justify-content: space-between;  
+        align-items: center;
+        padding: 10px;
+      border-radius: 10px; 
+    }
+
+    .easy img {
+        width: 200px;
+        height: 160px;
+        object-fit: cover; 
+        border-radius: 10px;  
+    }
+
+    .tara {
+        flex: 1;  
+        padding-left: 20px;  
+    }
+
+    .book {
+        font-size: 20px;
+    }
+
+    .fast {
+        font-size: 18px;
+    }
+
+    .don {
+        font-size: 17px;
+        padding: 15px 30px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 4px 4px 5px rgb(82, 79, 79);  
+
+    }
+
+    .don:hover {
+        background-color: rgb(129, 186, 240);
+        color: white;
+    }
+
+    .lab {
+        font-size: 19px;
+        color: red;
+    }
+
+#divya {
+        width: 100%;
+        height: 300px;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        gap: 40px;
+    }
+    .tag1 img {
+        width: 350px;
+        height: 250px;
+        border-radius: 15px; 
+    }
+    
+#part{
+    width: 100;
+    height: 550px;
+    background-color: rgb(201, 228, 228);
+}
+.the{
+    font-size: 25px;
+    font-weight: bolder;
+    padding-left:35%;
+    
+}
+.thes{
+    margin-bottom: 24px;
+    font-size: 19px;
+    padding-left:28%;
+
+}
+.tor{
+    color: rgb(69, 157, 192);
+}
+
+#part {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.box {
+    width: 30%; 
+}
+
+
+#khushi {
+    background-color: rgb(158, 201, 221); 
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+form {
+    display: inline-block; 
+    margin-top: 20px; 
+}
+
+input[type="text"], input[type="password"] {
+    padding: 8px;
+    margin: 5px;
+    width: 80%; /* Adjust input width to 80% */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color for the submit button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
 
 
 
@@ -156,7 +303,37 @@ margin-top: 3%;
 
 
 
-    @media (max-width: 450px) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width: 340px) {
         nav ul {
             flex-direction: column;
             text-align: center;
@@ -173,4 +350,5 @@ margin-top: 3%;
                 font-size: 24px;  }
             
         }
-    
+       
+          
