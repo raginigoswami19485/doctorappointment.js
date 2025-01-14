@@ -1,40 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #part {
+    text-align: center; /* This centers the text within the section */
+}
+
+.row {
+    display: flex;
+    justify-content: space-around; /* This ensures the boxes are spaced evenly */
+    align-items: center; /* This centers the content vertically within the row */
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally within each box */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the boxes */
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.box:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.parts1 img {
+    width: 100px; /* Ensures the image has a fixed size */
+    margin-bottom: 15px; /* Adds space between the image and the text */
+}
+
+.and {
+    text-align: center; /* Centers the text in the box */
+}
+
+.tor {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adds space between title and description */
+}
+
+.tors {
+    font-size: 14px;
+    color: #666;
+}
+
+  </style>
 </head>
 <body>
-<section id="khushi">
-    <p>Fill the form</p>
-    <form>
-        Enter Your Name: <input type="text" id="loginname"><br><br>
-        Enter Your Password: <input type="password" id="loginpass"><br><br> 
-        <input type="submit" value="Login" onclick="return login()">
-    </form>
+  <div id="part">
+    <p class="the">Discover the Online Appointment!</p>
+    <p class="thes">A step-by-step guide to build an on-demand appointment for patients</p>
+    <div class="row"> 
+        <!-- First box -->
+        <div class="box">
+            <div class="parts1">
+                <img src="./photos/icon-step-1.png" width="100px">
+            </div>
+            <div class="and">
+                <p class="tor">Find a Doctor</p>
+                <p class="tors">With more than 1000+ doctors and on mission to provide best care Health Care Service</p>
+            </div>
+        </div>
+
+        <!-- Second box -->
+        <div class="box">
+            <div class="parts1">
+                <img src="./photos/icon-step-2.png" width="100px">
+            </div>
+            <div class="and" >
+                <p class="tor">Find a Doctor</p>
+                <p class="tors">With more than 1000+ doctors and on <br>mission to provide best care Health Care <br>Service</p>
+            </div>
+        </div>
+
+        <!-- Third box -->
+        <div class="box">
+            <div class="parts1">
+                <img src="./photos/icon-step-3.png" width="100px">
+            </div>
+            <div class="and">
+                <p  class="tor">Find a Doctor</p>
+                <p class="tors" >With more than 1000+ doctors and on <br>mission to provide best care Health Care <br>Service</p>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 
-<!-- Add Three.js and Vanta.js scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
 
-<script>
-    // Ensure Vanta.js initializes after the DOM is fully loaded
-    window.onload = function() {
-        VANTA.CLOUDS({
-            el: "#khushi",  // Target the element with ID "khushi"
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00
-        });
-    };
-</script>
 
-<script src="script.js"></script>
-<script src="string.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

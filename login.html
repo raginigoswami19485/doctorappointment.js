@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 
 </head>
 <body>
-    <section id="khushi">
+    <section  id="khushi">
+        <div  data-aos="zoom-in" class="go">
         <p>Fill the form</p>
-        <form>
+        <form id="logo">
             Enter Your Name: <input type="text" id="loginname"><br><br>
             Enter Your Password: <input type="password" id="loginpass"><br><br> 
             <input type="submit" value="Login" onclick="return login()">
         </form>
+        </div>
     </section>
 
 
 
 
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
     <script src="script.js"></script>
     <script src="string.js"></script>
 </body>
