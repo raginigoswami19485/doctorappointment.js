@@ -62,7 +62,7 @@
         alert("mis match password")
         document.querySelector("#cpass").focus()
         return false
-    }
+    }    
  localStorage.setItem("name",name)
  localStorage.setItem("cpass",cpass)
  localStorage.setItem("number",number)

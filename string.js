@@ -1,6 +1,6 @@
 
 
-VANTA.BIRDS({
+VANTA.BIRDS({  
     el: "#file",
     mouseControls: true,
     touchControls: true,
