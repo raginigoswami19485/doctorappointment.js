@@ -26,7 +26,7 @@
         alert("Please fill your address");
         document.querySelector("#address").focus();
         return false;
-    }
+    }    
     if(number==""){
         alert("Please fill your number");
         document.querySelector("#number").focus();
