@@ -683,15 +683,26 @@ border: 4px solid rgb(238, 236, 236);
     height: 50px;
    
 }
-#dell a{
-    
-    border: 2px solid black;
-    width:200px ;
-    height:50px ;
-    background-color: #e64c1d;
-   
+#dell a {
+    display: inline-block;
+    border: 3px solid black;
+    width: 200px;
+    height: 50px;
+    background-color: #85b7e6;
+    color: white;
+    text-align: center;
+    line-height: 50px; 
+    text-decoration: none; 
+    border-radius: 8px;
 }
 
+#dell a:hover {
+    background-color: #ff7043; 
+}
+
+#dell a:active {
+    background-color: #d84315; 
+}
 /*  onece again big image code end */
 #ragini{
     width: 100%;
@@ -699,6 +710,60 @@ border: 4px solid rgb(238, 236, 236);
     background-color: #4e9bec;
     
 }
+/* footer code strat */
+#boss .error img{
+    font-size: 303;
+}
+#boss {
+    width: 100%;
+    height: 450px;
+    color: white;
+
+    background-color: black;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    padding: 20px;
+}
+ul li{
+    list-style: none;
+}
+
+#boss .error {
+    font-size: 30px;
+    flex: 1;
+    margin: 10px;
+}
+
+#boss .error p {
+color: white;
+    font-size: 25px;
+    margin-top: 10px;
+}
+/* footer code end */
+
+/* footer 2nd code strat */
+
+.error {
+    background-color: black; /* Set background to black */
+    color: white; /* Set text color to white */
+    font-size: 33px; /* Set font size to 33px */
+    text-align: center; /* Center the text */
+    padding: 20px;
+}
+
+.error li {
+    list-style: none; /* Remove list bullets */
+    margin: 10px 0; /* Add space between list items */
+}
+
+.error i {
+    margin-right: 10px; /* Add space between the icon and text */
+}
+
+/* footer 2nd code strat */
+
+
     @media (max-width: 340px) {
         nav ul {
             flex-direction: column;
