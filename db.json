@@ -1,0 +1,21 @@
+
+{
+    "docter":[
+  {
+     "name":"ragini",
+     "age":22,
+     "number":23456789,
+     "problem":"cold",
+     "data":"25/2/2025"
+ 
+  },
+  {
+     "name":"divya",
+     "age":15,
+     "number":23456789,
+     "problem":"cold",
+     "data":"25/2/2025"
+ 
+  }
+ ]
+ }

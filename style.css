@@ -43,7 +43,7 @@
             width: 100%;
             height: 50px;
             background-color: black;
-            border: 5px solid rgb(49, 172, 155);
+            border: 5px solid skyblue;
             text-align: center;
             display: flex;
         justify-content: center;
@@ -408,9 +408,297 @@ section {
 
 /* end code  */
 /* big img code start */
+/* section {
+    background-color: #007BFF; /* Blue background */
+    /* padding: 40px 0;
+} */ 
+
+#care{
+       padding-top: 10%;
+ 
+}
+
+#song {
+    width: 80%;
+    height:400px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #0a3563; 
+    /* padding: 40px 0; */
+    background-image: radial-gradient(circle, black 0%, transparent 5%), radial-gradient(circle, black 4%, transparent 6%);
+    background-size: 15px 15px; 
+    /* background-position: 0 0, 10px 10px;  */
+}
+
+
+.songs {
+    color: white;
+    flex: 1;
+    padding-right: 20px;
+
+}
+.songs h2 {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-bottom: 2px;
+    color: #4CAF50;
+    padding-right: 40%;
+}
+
+.songs p {
+    font:48px poppins, sans-serif;
+    font-weight: bolder;
+    padding-right: 30%;
+    margin-top: 40px;
+}
+
+.songs button {
+    padding: 10px 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #488fe0;
+    border: none;
+    color: rgb(248, 245, 245);
+    font-size: 20px;
+    /* cursor: pointer; */
+ margin-top: 30px;
+}
+
+.songs button:hover {
+    background-color: red;
+}
+
+.video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.video img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* big img code end */
 
+/* start full size img code */
+
+    #home{
+        background: linear-gradient(to bottom, rgb(82, 82, 243), white); 
+        width: 100%;
+        height: 700px;
+    }
+
+    .container {
+        
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    }
+    #home .container .text h2{
+        font-size: 40px;
+        padding-right: 49%;
+    }
+    #home .container .text p{
+        font-size: 25px;
+        padding-right:62%;
+
+    }
+    #home .container .text button{
+        width: 200px;
+        height: 50px;
+        border-radius: 30px;
+
+        border: none;
+        background-color: #149af3;
+        font-size: 25px;
+        color: white;
+        font-weight: bolder;
+        box-shadow: 0px 8px 9px black;
+       margin-right: 70%;
+    }
+    .text {
+        color:black; 
+        flex: 1; 
+        padding-right: 20px; 
+    }
+    
+    .image img {
+        max-width: 100%; 
+        height: auto; 
+    }
+    .von{
+        padding-top: 10%;
+    }
+    #home .container .text button:hover{
+        background-color: #e64c1d;
+        width: 200px;
+        height: 50px;
+        border-radius: 30px;
+    }
+
+/* end code */
+/* ject code start */
+#ject{
+    width: 100%;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fresh{
+
+    box-shadow: 8px 10px 10px black;   
+     height: 220px;
+    width: 89%;
+    background-color: rgb(17, 10, 109);
+    display: flex;
+    align-items: center;
+}
+#ject .fresh h2{
+    font-size: 35px;
+    font-weight: bolder;
+    align-items: center;
+    color: white;
+    padding-right: 0%;
+
+}
+#ject .fresh div{
+    width: 500px;
+}
+#ject .fresh h2 samp{
+    color:orangered ;
+}
+#ject .fresh h3{
+    padding-left: 25%;
+    font-size: 20px;
+    color:white ;
+}
+/* end code ject */
+/* two last image code start */
+#house{
+    width: 100%;
+    height: 400px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 66px;
+
+}
+#house .india{
+    width: 600px;
+    height: 320px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.india  div p{
+
+    color: gray;
+    font-size: 25px;
+    font-weight:bolder;
+padding-top: 5% ;
+}
+.india  div{
+    width:400px ;
+    height:310px ;
+    border-radius: 20px;
+text-align: center;
+border: 4px solid rgb(238, 236, 236);
+
+}
+.india  div h2{
+    font-size: 39px;
+    color: rgb(5, 5, 80);
+    font-weight: bolder;
+    padding-top: 16%;
+}
+.india  div button{
+    font-size: 19px;
+    font-weight: bolder;
+    border: none;
+    background-color: white;
+    padding-top: 5%;
+    color:rgb(98, 190, 226) ;
+}
+.india  div h3{
+    color: gray;
+}
+.india  div:hover{
+    border:6px solid rgb(63, 180, 226);
+}
+/* two last image code end */
+
+/*  onece again big image code start */
+
+#mpox{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom,  rgb(82, 82, 243), white); 
+
+}
+#mpox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10% ;
+    background-color: #0a3563;
+}
+ h6{
+    font-size: 25px;
+    font-weight: bolder;
+    color: black;
+    display: inline;
+    margin-right: 20px;
+
+}
+#mpox  .poxs h1{
+    font-size:40px ;
+}
+
+
+
+#mpox  .poxs button a{
+    width: 800px;
+    height: 100px;
+    border:2px solid black ;
+    border-radius: 30px;
+    font-size: 40px;
+}
+
+#mpox  .poxs input{
+  width: 300px;
+  height: 50px;
+  text-align: center;
+}
+
+.poxs button{
+    width: 150px;
+    height: 50px;
+   
+}
+#dell a{
+    
+    border: 2px solid black;
+    width:200px ;
+    height:50px ;
+    background-color: #e64c1d;
+   
+}
+
+/*  onece again big image code end */
+#ragini{
+    width: 100%;
+    height: 550px;
+    background-color: #4e9bec;
+    
+}
     @media (max-width: 340px) {
         nav ul {
             flex-direction: column;
@@ -428,5 +716,4 @@ section {
                 font-size: 24px;  }
             
         }
-       
- 
+      
