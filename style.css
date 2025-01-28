@@ -745,20 +745,20 @@ color: white;
 /* footer 2nd code strat */
 
 .error {
-    background-color: black; /* Set background to black */
-    color: white; /* Set text color to white */
-    font-size: 33px; /* Set font size to 33px */
-    text-align: center; /* Center the text */
+    background-color: black; 
+    color: white; 
+    font-size: 33px; 
+    text-align: center; 
     padding: 20px;
 }
 
 .error li {
-    list-style: none; /* Remove list bullets */
-    margin: 10px 0; /* Add space between list items */
+    list-style: none; 
+    margin: 10px 0; 
 }
 
 .error i {
-    margin-right: 10px; /* Add space between the icon and text */
+    margin-right: 10px; 
 }
 
 /* footer 2nd code strat */
