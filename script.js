@@ -9,7 +9,7 @@
 
     if(name==""){
         alert("Please fill your name");
-        document.querySelector("#name").focus();
+        document.querySelector("#name").focus();      
         return false;
     }
     if(email==""){
