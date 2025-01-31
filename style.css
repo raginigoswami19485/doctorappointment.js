@@ -745,9 +745,9 @@ color: white;
 /* footer 2nd code strat */
 
 .error {
-    background-color: black; 
+    background-color: rgb(58, 57, 57); 
     color: white; 
-    font-size: 33px; 
+    font-size: 28px; 
     text-align: center; 
     padding: 20px;
 }
