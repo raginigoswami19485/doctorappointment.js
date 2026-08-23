@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Simple Pie Chart</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(166, 166, 237);
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  .pie-chart {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .slice {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    clip: rect(0px, 300px, 300px, 150px);
+    border-radius: 50%;
+  }
+  .slice .fill {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    border-radius: 50%;
+    clip: rect(0px, 150px, 300px, 0px);
+    transform: rotate(0deg);
+    transform-origin: center right;
+  }
+  .legend {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .legend-item {
+    margin-bottom: 8px;
+  }
+  .color-box {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<h2>Book Test Data Pie Chart</h2>
+
+<div class="pie-chart" id="pieChart"></div>
+
+<div class="legend" id="legend"></div>
+
+<script>
+  // Data Example (replace with your own)
+  const data = [
+    {label: "Blood Tests", value: 8, color: "#007BFF"},
+    {label: "COVID Tests", value: 5, color: "#28a745"},
+    {label: "X-Ray Tests", value: 3, color: "#ffc107"},
+    {label: "MRI Tests", value: 2, color: "#dc3545"}
+  ];
+
+  // Total sum of values
+  const total = data.reduce((acc, item) => acc + item.value, 0);
+
+  // Reference to pie chart container
+  const pieChart = document.getElementById('pieChart');
+  const legend = document.getElementById('legend');
+
+  // Helper function to create a slice
+  function createSlice(degStart, degSize, color) {
+    const slice = document.createElement('div');
+    slice.className = 'slice';
+
+    const fill = document.createElement('div');
+    fill.className = 'fill';
+    fill.style.backgroundColor = color;
+
+    // If slice > 180deg, we need two slices (half circles)
+    if (degSize > 180) {
+      fill.style.transform = `rotate(180deg)`;
+      slice.appendChild(fill);
+
+      // Second half slice
+      const slice2 = document.createElement('div');
+      slice2.className = 'slice';
+      const fill2 = document.createElement('div');
+      fill2.className = 'fill';
+      fill2.style.backgroundColor = color;
+      fill2.style.transform = `rotate(${degSize - 180}deg)`;
+      slice2.style.transform = `rotate(${degStart + 180}deg)`;
+      slice2.appendChild(fill2);
+
+      pieChart.appendChild(slice);
+      pieChart.appendChild(slice2);
+    } else {
+      fill.style.transform = `rotate(${degSize}deg)`;
+      slice.style.transform = `rotate(${degStart}deg)`;
+      slice.appendChild(fill);
+      pieChart.appendChild(slice);
+    }
+  }
+
+  // Generate pie slices
+  let currentAngle = 0;
+  data.forEach(item => {
+    const sliceAngle = (item.value / total) * 360;
+    createSlice(currentAngle, sliceAngle, item.color);
+    currentAngle += sliceAngle;
+
+    // Add legend item
+    const legendItem = document.createElement('div');
+    legendItem.className = 'legend-item';
+    legendItem.innerHTML = `<span class="color-box" style="background:${item.color}"></span>${item.label} (${item.value})`;
+    legend.appendChild(legendItem);
+  });
+</script>
+
+</body>
+</html>

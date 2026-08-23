@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hospitals</title>
+  <link rel="stylesheet" href="style.css">
+  <!--  -->
+</head>
+<body>
+
+    <div id="zones">
+        <marquee behavior=""direction>
+        <p id="zone">Guwahati Hospitals are Live. You can book appointments from your comfort zone. Helpline 9435200024 </p>
+    </marquee>
+    </div>
+    <br>
+    <br>
+<h2>Top Hospitals</h2>
+<br>
+<br>
+<div class="grid" id="hospitalGrid"></div>
+
+
+<footer>
+
+    <section>
+<img src="https://www.quickobook.com/assets/img/logo4.png">
+
+    </section>
+
+    <section>
+        <div id="boss">
+            <div class="error"><img src="https://www.quickobook.com/assets/img/logo4.png" width="300px">
+          <br><br>
+                <p>QuickoBook is a registered start up<br> company empaneled with 10000+ <br>Doctors, 500+ Hospitals, lives touched<br> of more than 2 Million patients.</p>
+                <div>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+
+                </div>
+            </div>
+            <div class="error">
+                <ul>
+                    <li>For Information
+                        <hr>
+                        <hr>
+                        <hr>
+                      <li>About Us</li>
+                      <li>Booking guide </li>
+                      <li>Pharmacy</li>
+                      <li>Careers</li>
+                      <li>Press Release</li>
+                      <li>FAQ,S</li>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="error">
+                <ul>
+                    <li>Helpful Links
+                        <hr>
+                        <hr>
+                        <hr>
+                      <li>Booking Appointment</li>
+                      <li> Search For Doctorsli>
+                      <li>Search For hospitals</li>
+                      <li> Book Lab</li>
+                      <li>Franchisee register</li>
+                      <li>SMS Booking</li>
+                      <li>Service</li>
+
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+
+<section>
+    <div>
+        <ul class="error">
+            <li>Contact Us
+                <hr>
+                <li>
+                <i class="fa-solid fa-location-dot"></i>
+                QWKPRO CONSULTANCY PVT LTD,<br>
+                Silchar, Assam<br>
+                <i class="fa-solid fa-phone"></i>
+                +91 943 520 0024 
+            </li>
+            <li>Customer Support :<br>
+                <i class="fa-solid fa-message"></i>
+                support@quickobook.com
+               </li>
+               <li>Official Queries :<br>
+                <i class="fa-solid fa-message"></i>
+                info@quickobook.com
+                       
+
+                
+               </li>    
+            </li>
+        </Ul>
+    </div>
+</section>
+</footer>
+<!-- footer  code end-->
+
+<script>
+  const hospitals = [
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/download_1-min_.jpeg",
+      name: "Choudhury Eye Hospital",
+      specialist: "Ophthalmologist",
+      address: "Shillong Patty, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/FB_IMG_1580319192139_-min_.jpg",
+      name: "S N Orthopaedic Hospital",
+      specialist: "Orthopedic Surgeon",
+      address: "Naga Tilla Point, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/2018-07-10_-min_.jpg",
+      name: "City Maternity Nursing Home",
+      specialist: "Gynaecologist, Pediatrician",
+      address: "Rangirkhari, Silchar"
+    },
+    
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/images_(2)_-min_.jpeg",
+      name: "Lifeline Hospital",
+      specialist: "General Surgeon, Pediatrician",
+      address: "NS Avenue, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/download_-min_.jpeg",
+      name: "Apollo Clinic",
+      specialist: "Dermatologist, ENT, Pediatrician",
+      address: "Meherpur, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/images_(2)_.jpeg",
+      name: "Life Line Eye Care",
+      specialist: "Ophthalmologist",
+      address: "NS Avenue"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/7782__MG_2001.jpg",
+      name: "Gracewell Hospital",
+      specialist: "General Surgeon, Gynaecologist",
+      address: "Meherpur, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/Arogya_.jpg",
+      name: "Arogya Hospital",
+      specialist: "Pediatrician, Surgeon, ENT",
+      address: "Green Park, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/nyt_.jpg",
+      name: "Nightingale Hospital",
+      specialist: "ENT, Orthopedic Surgeon",
+      address: "Meherpur, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/2018-07-10_-min_.jpg",
+      name: "City Maternity Nursing Home",
+      specialist: "Gynaecologist, Pediatrician",
+      address: "Rangirkhari, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/download_1-min_.jpeg",
+      name: "Choudhury Eye Hospital",
+      specialist: "Ophthalmologist",
+      address: "Shillong Patty, Silchar"
+    },
+    {
+      image: "https://www.quickobook.com/uploads/visit_image/34792628_1897737790288578_7352701955954704384_n_1.jpg",
+      name: "Medinova Hospital",
+      specialist: "General Surgeon, Gynaecologist",
+      address: "Meherpur, Silchar"
+    }
+  ];
+
+  const container = document.getElementById("hospitalGrid");
+
+  hospitals.forEach(h => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${h.image}" alt="${h.name}">
+      <div class="info">
+        <h3>${h.name}</h3>
+        <p><strong>Specialist:</strong> ${h.specialist}</p>
+        <p><strong>Address:</strong> ${h.address}</p>
+        <button>See Availability</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+</script>
+
+</body>
+</html>
+

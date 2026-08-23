@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Doctor Appointment & Medicine Orders</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f8fa;
+  }
+  h2 {
+    color: #007BFF;
+  }
+  .container {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  .box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+    flex: 1 1 300px;
+    min-width: 300px;
+  }
+  input, button {
+    padding: 10px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+  ul {
+    list-style:none;
+    padding-left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  ul li {
+    padding: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  canvas {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+</style>
+
+</head>
+<body>
+
+  <h2>Sign Up</h2>
+  <div class="box" style="max-width:400px;">
+    <input type="text" id="name" placeholder="Enter your name" />
+    <input type="email" id="email" placeholder="Enter your email" />
+    <input type="text" id="number" placeholder="Enter your phone number" />
+    <input type="text" id="address" placeholder="Enter your address" />
+    <input type="password" id="pass" placeholder="Enter password" />
+    <input type="password" id="cpass" placeholder="Confirm password" />
+    <button onclick="signup()">Sign Up</button>
+  </div>
+
+  <h2 style="margin-top:50px;">Order Medicine</h2>
+  <div class="container">
+    <div class="box" style="max-width: 300px;">
+      <input type="text" id="medName" placeholder="Enter medicine name" />
+      <button onclick="addMedicine()">Order Medicine</button>
+
+      <h4>Ordered Medicines:</h4>
+      <ul id="medList"></ul>
+    </div>
+
+    <div class="box" style="max-width: 600px;">
+      <h3>Charts</h3>
+      <canvas id="barChart"></canvas>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Signup data storage
+  function signup() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const number = document.getElementById("number").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const pass = document.getElementById("pass").value;
+    const cpass = document.getElementById("cpass").value;
+
+    if (!name || !email || !number || !address || !pass || !cpass) {
+      alert("Please fill all signup fields!");
+      return;
+    }
+    if (pass !== cpass) {
+      alert("Passwords do not match!");
+      return;
+    }
+    // Save user info in localStorage
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    users.push({ name, email, number, address, pass });
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Signup successful! 🎉");
+
+    // Clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("number").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("pass").value = "";
+    document.getElementById("cpass").value = "";
+
+    updateCharts();
+  }
+
+  // Medicine order storage
+  let medicineOrders = JSON.parse(localStorage.getItem("medicineOrders") || "[]");
+
+  function updateMedicineList() {
+    const medList = document.getElementById("medList");
+    medList.innerHTML = "";
+    medicineOrders.forEach((med, i) => {
+      const li = document.createElement("li");
+      li.textContent = med;
+      medList.appendChild(li);
+    });
+  }
+  updateMedicineList();
+
+  // Add medicine order
+  function addMedicine() {
+    const medInput = document.getElementById("medName");
+    const medName = medInput.value.trim();
+    if (medName === "") {
+      alert("Please enter medicine name!");
+      return;
+    }
+    medicineOrders.push(medName);
+    localStorage.setItem("medicineOrders", JSON.stringify(medicineOrders));
+    medInput.value = "";
+    updateMedicineList();
+    updateCharts();
+  }
+
+  // Chart setup
+  const barCtx = document.getElementById("barChart").getContext("2d");
+  const pieCtx = document.getElementById("pieChart").getContext("2d");
+
+  let barChart, pieChart;
+
+  function getMedicineCounts() {
+    const counts = {};
+    medicineOrders.forEach(med => {
+      counts[med] = (counts[med] || 0) + 1;
+    });
+    return counts;
+  }
+
+  function updateCharts() {
+    // Signup count
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    let userCount = users.length;
+
+    // Medicine orders count per medicine
+    let counts = getMedicineCounts();
+    let medLabels = Object.keys(counts);
+    let medData = Object.values(counts);
+
+    // For bar chart: show medicine orders count + total users
+    const barLabels = [...medLabels, "Total Users"];
+    const barData = [...medData, userCount];
+    const colors = barLabels.map(() => getRandomColor());
+
+    if (barChart) barChart.destroy();
+    if (pieChart) pieChart.destroy();
+
+    barChart = new Chart(barCtx, {
+      type: "bar",
+      data: {
+        labels: barLabels,
+        datasets: [{
+          label: "Count",
+          data: barData,
+          backgroundColor: colors,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    pieChart = new Chart(pieCtx, {
+      type: "pie",
+      data: {
+        labels: barLabels,
+        datasets: [{
+          label: "Count",
+          data: barData,
+          backgroundColor: colors,
+        }]
+      },
+      options: { responsive: true }
+    });
+  }
+
+  // Utility random pastel color
+  function getRandomColor() {
+    const r = Math.floor(150 + Math.random() * 100);
+    const g = Math.floor(150 + Math.random() * 100);
+    const b = Math.floor(150 + Math.random() * 100);
+    return `rgba(${r},${g},${b},0.7)`;
+  }
+
+  updateCharts();
+</script>
+
+</body>
+</html>

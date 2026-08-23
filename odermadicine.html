@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Medicine Section</title>
+  <style>
+    #order-medicine {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    #order-medicine h2 {
+      text-align: center;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+
+    .order-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #medicine-name {
+      flex-grow: 1;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 8px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+
+    #medicine-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      min-height: 50px;
+    }
+
+    #medicine-list li {
+      margin-bottom: 8px;
+    }
+
+    .remove-btn {
+      margin-left: 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      padding: 2px 7px;
+      font-size: 12px;
+    }
+
+    #order-message {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+      text-align: center;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="order-medicine">
+    <h2>Order Medicine</h2>
+    <div class="order-form">
+      <input type="text" id="medicine-name" placeholder="Enter medicine name" />
+      <button id="add-medicine-btn">Add Medicine</button>
+    </div>
+    
+    <h3>Ordered Medicines:</h3>
+    <ul id="medicine-list"></ul>
+    
+    <button id="place-order-btn" disabled>Place Order</button>
+    
+    <div id="order-message"></div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const medicineInput = document.getElementById('medicine-name');
+      const addBtn = document.getElementById('add-medicine-btn');
+      const medicineList = document.getElementById('medicine-list');
+      const placeOrderBtn = document.getElementById('place-order-btn');
+      const orderMessage = document.getElementById('order-message');
+      
+      let medicines = [];
+
+      function updateMedicineList() {
+        medicineList.innerHTML = '';
+        medicines.forEach((med, index) => {
+          const li = document.createElement('li');
+          li.textContent = med;
+          
+          // Remove button
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = 'Remove';
+          removeBtn.className = 'remove-btn';
+          removeBtn.onclick = () => {
+            medicines.splice(index, 1);
+            updateMedicineList();
+            checkPlaceOrder();
+            orderMessage.textContent = '';
+          };
+          
+          li.appendChild(removeBtn);
+          medicineList.appendChild(li);
+        });
+      }
+
+      function checkPlaceOrder() {
+        placeOrderBtn.disabled = medicines.length === 0;
+      }
+
+      addBtn.addEventListener('click', () => {
+        const medName = medicineInput.value.trim();
+        if (medName === '') {
+          alert('Please enter medicine name');
+          return;
+        }
+        medicines.push(medName);
+        medicineInput.value = '';
+        updateMedicineList();
+        checkPlaceOrder();
+        orderMessage.textContent = '';
+      });
+
+      placeOrderBtn.addEventListener('click', () => {
+        if (medicines.length === 0) return;
+        orderMessage.textContent = `Order placed successfully for: ${medicines.join(', ')}`;
+        medicines = [];
+        updateMedicineList();
+        checkPlaceOrder();
+      });
+
+      checkPlaceOrder();
+    });
+  </script>
+
+</body>
+</html>
